@@ -1,0 +1,83 @@
+<html>
+
+<title>
+    grid-layout
+</title>
+
+<style>
+    .body{
+        font-family: Arial, sans-serif;
+        background-color: black;
+
+    }
+
+    .container{
+        background-color: black;
+        width: 1200px;
+        margin: 0px auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        height: 100px;
+        color: white;
+    }
+
+    .left{
+        background-color: red;
+        flex-grow:1;
+    }
+
+    .horizontal-center{
+        margin: 0 auto;
+    }
+
+    .right{
+        background-color: blue;
+        flex-grow: 2;
+    }
+
+    .vertical-center{
+
+    }
+
+    .grid1{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    
+  
+
+</style>
+</html>
+
+<body>
+    <div class="container" >
+        <div class="left">
+            <div class="horizontal-center">
+            <h1>Left</h1>
+        </div>
+        <div>
+            <h3>Text Text Text Text Text Text Text Text Text Text Text Text </h3>
+        </div>
+    </div>
+
+        <div class="right">
+            
+            <h1>Right</h1>
+            
+
+            <div class="grid1">
+                <h2>Column 1</h2>
+                <h2>Column 2</h2>
+                <h2>Column 3</h3>
+                <h2>Column 1</h2>
+                <h2>Column 2</h2>
+                <h2>Column 3</h3>
+                <h2>Column 1</h2>
+                <h2>Column 2</h2>
+                <h2>Column 3</h3>
+                 </div>
+                </div>
+        </div>
+    </div>
+</body>

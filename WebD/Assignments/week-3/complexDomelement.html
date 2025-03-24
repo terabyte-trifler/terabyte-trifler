@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <button onclick="createComplexDomelement()">Add</button>
+    </body>    
+
+    <script>
+        function createComplexDomelement(){
+            const newDiv = document.createElement("div");
+            const newh1 = document.createElement("h1");
+
+            newh1.innerHTML = "randomText";
+
+            newDiv.appendChild(newh1);
+            document.querySelector("body").appendChild(newDiv);
+        }
+    </script>
+</html>
