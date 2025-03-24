@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-It contains all the setup
+It contains all the setup for the assignments
 <!--
 **terabyte-trifler/terabyte-trifler** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
