@@ -38,31 +38,42 @@ function signUpHandler(req,res){
     res.json({
         message: "you are signed in"
     })
+
+    console.log(users);
 }
 
 function signInHandler(req,res){
     const username = req.body.username;
     const password = req.body.password;
 
-    const user = users.find(function(u){
-        if(u.username == username && u.password == password ) {
-            return true;
-        }
-        else{
-            return false;
-        }
-    })
+    let foundUser = null;
 
-    if(user){
-        const token = generateToken();o
-        fundUser.token = token;
+    for(let i=0; i<users.length;i++){
+        if(users[i].username == username && users[i].password == password)
+        {
+            foundUser = users[i]
+        }
+    }
+
+    if(foundUser){
+        const token = generateToken();
+        foundUser.token = token;
 
         res.json({
-            message: token
+            token: token
         })
     }
+        else
+        {
+            res.status(403).send({
+                message: "Invalid username or password"
+            })
+        }
+        console.log(users);
 }
 
 app.post("/signup",signUpHandler)
 
-app.post("/signin",signInHandler )
+app.post("/signin",signInHandler)
+
+app.listen(3020);
