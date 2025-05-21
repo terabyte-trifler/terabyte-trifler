@@ -8,7 +8,12 @@ app.use(express.json());
 
 const users = [];
 
-app.post("/signup", function(req,res){
+function logger(req,res,next){
+    console.log(req.method + "request came");
+    next();
+}
+
+app.post("/signup", logger, function(req,res){
     const username = req.body.username
     const password = req.body.password
 
@@ -25,7 +30,7 @@ app.post("/signup", function(req,res){
 
 })
 
-app.post("/signin", function(req,res){
+app.post("/signin", logger, function(req,res){
     const username = req.body.username
     const password = req.body.password
 
@@ -60,14 +65,28 @@ app.post("/signin", function(req,res){
     }
 })
 
-app.post("/me", function(req,res){
-
+function auth(req,res,next){
     const token = req.headers.token;
+    const decodedData = jwt.verify(token,JWT_SECRET);
+
+    if(decodedData.username){
+        next()
+    } else
+    {
+        res.json({
+            message: "You are not logged in"
+        })
+    }
+}
+
+app.post("/me", logger, function(req,res){
+
+    /*const token = req.headers.token;
     const decodedData = jwt.verify(token, JWT_SECRET)
 
     // const decodedData = jwt.decode(token)  Vulnerability 
 
-    if(decodedData.username) {
+    if(decodedData.username) */ 
        let foundUser = null;
 
        for(let i=0; i<users.length; i++)
@@ -76,17 +95,18 @@ app.post("/me", function(req,res){
         {
             foundUser = users[i];
         }
-       }
+        }
 
        res.json({
             username: foundUser.username,
             password: foundUser.password
        })
-    }
-
-    
-
-})
+    })
 
 
-app.listen(3031);
+
+
+
+
+
+app.listen(3032);
