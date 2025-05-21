@@ -50,6 +50,10 @@ app.post("/signin", function(req,res){
             username
         }, JWT_SECRET);
 
+        res.header("jwt", token);
+
+        res.header("random","harkirat");
+
         res.json({
             token: token
         })
