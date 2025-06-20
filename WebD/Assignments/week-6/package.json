@@ -1,0 +1,15 @@
+{
+  "name": "middlewares",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "It contains all the setup for the assignments <!-- **terabyte-trifler/terabyte-trifler** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
