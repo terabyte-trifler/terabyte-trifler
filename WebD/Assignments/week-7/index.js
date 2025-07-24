@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const JWT_SECRET = "asdasd123@123";
 const mongoose = require("mongoose");
 
-await mongoose.connect("mongodb+srv://singhgurnoor080:trv51iTxjFzkF6O3@cluster0.hcozeer.mongodb.net/todo-gurnoor-2222");
+await mongoose.connect("mongodb+srv://singhgurnoor080:trv51iFzkF6O3@cluster0.hcozeer.mongodb.net/todo-gurnoor-2222");
 
 
 
