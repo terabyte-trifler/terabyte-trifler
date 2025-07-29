@@ -3,9 +3,11 @@ import './App.css';
 
 
 export default function App() {
+
+  let counterVisible = true; // Conditional rendering
+
  return  <div>
-    <b>hi there!</b>
-    <Counter></Counter>
+    {counterVisible ? <Counter></Counter> : null} //Condition rendering
   </div>
 }
 
