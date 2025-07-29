@@ -12,8 +12,12 @@ export default function App() {
 function Counter() {
 
   const[count, setCount] = useState(0);
+// whenever the count varibale is changing react is calling counter fn everytime
+  setInterval(function(){
+    setCount(count+1);
+  },1000)
 
-  function increaseCount() {
+  /*function increaseCount() {
     setCount(count+1);
   }
 
@@ -23,12 +27,9 @@ function Counter() {
 
   function resetCount() {
     setCount(0);
-  }
+  }*/
 
   return <div>
     <h1>{count}</h1>
-    <button onClick={increaseCount}>Increase Count</button>
-    <button onClick={decreaseCount}>Decrease Count</button>
-    <button onClick={increaseCount}>Reset Count</button>
   </div>
 }
