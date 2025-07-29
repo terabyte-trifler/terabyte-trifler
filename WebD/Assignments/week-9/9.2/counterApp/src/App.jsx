@@ -4,8 +4,15 @@ import './App.css';
 
 export default function App() {
 
-  let counterVisible = true; // Conditional rendering
+  let [counterVisible, setCounterVisible] = useState(true); // Conditional rendering
 
+  useEffect(function() 
+  {
+    setInterval(function()
+    {
+      setCounterVisible(c => !c)
+      },5000);
+    }, [])
  return  <div>
     {counterVisible ? <Counter></Counter> : null} //Condition rendering
   </div>
@@ -17,14 +24,15 @@ function Counter() {
 // whenever the count varibale is changing react is calling counter fn everytimemeans react is
 // re-rendering
 //guard our setInterval from re-renders
-  setInterval(function(){
-    setCount(count+1);
-  },1000)
 
   useEffect(function(){
-    setInterval(function(){
+    let clock = setInterval(function(){
       setCount(count => count + 1);
-    },1000)
+    },1000);
+
+    return function() {
+      clearInterval(clock)
+    }
   },[])
   /*function increaseCount() {
     setCount(count+1);
