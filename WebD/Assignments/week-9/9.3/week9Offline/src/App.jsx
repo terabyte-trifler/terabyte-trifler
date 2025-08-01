@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 // Create a function component named App that will be rendered in the root element
 function App() {
+  <ToggleMessage />
     // return JSX that will be rendered
     return (
         // Apply inline styles to the div element
@@ -81,6 +82,8 @@ const style = {
     padding: 20,
     margin: 10,
 };
+
+
 
 // Create a function component named PostComponent with props to render it in the App component
 function PostComponent({ name, subtitle, time, image, description }) {
