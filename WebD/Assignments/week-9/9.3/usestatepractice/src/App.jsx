@@ -19,19 +19,19 @@ function App() {
 
 const ToggleMessage = () => {
   
-  let [isVisible, setIsVisible] = useState(true);
+  let [notificationCount, setNotificationCount] = useState(0);
 
   console.log("re-render");
-  function toggle() {
-    setIsVisible(!isVisible);
+  function increment() {
+    setNotificationCount(notificationCount + 1);
   }    
 
   return(
     <div>
-      <button onClick={toggle}>
-        Toggle Message
+      <button onClick={increment}>
+        Increase Count
       </button>
-      {isVisible && <p> This message is conditionally rendered! </p>}
+      {notificationCount}
     </div>
   );
 
