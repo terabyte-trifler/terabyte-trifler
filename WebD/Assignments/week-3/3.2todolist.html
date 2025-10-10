@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>
+            Todo List
+        </title>
+    </head>
+
+    <body>
+        <h1>To do List</h1>
+    <div id="todos">
+        <div id="todo-1">
+            <h4>1. Creating Websites</h4>
+            <button onclick="deleteTodo(1)">delete</button>
+        </div>
+        <div id="todo-2">
+            <h4>2. Going to Gym</h4>
+            <button onclick="deleteTodo(2)">delete</button>
+        </div>
+    </div>
+
+    <div>
+        <input id="inp" type="text"></input>
+        <button onclick="addTodo()">addTodo</button> 
+    </div>
+    </body>
+
+    <script>
+        let ctr =1;
+
+        function deleteTodo(index){
+            const element = document.getElementById(index);
+            element.parentNode.removeChild(element);
+        }
+        function addTodo(){
+            const value = document.getElementById("inp").value;
+            const newDivEl = document.createElement("div"); 
+
+            newDivEl.innerHTML ="<div>" + ctr+'.'+value+ '</div><button onclick="deleteTodo(' + ctr +  ')">Delete</button>';
+            document.querySelector("body").appendChild(newDivEl);
+            ctr= ctr+1;
+        }
+    </script>
+</html>

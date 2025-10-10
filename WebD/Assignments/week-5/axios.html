@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>
+            fetch API
+        </title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+    </head>
+
+    <body>
+    LinkedIn
+    <div id="posts"> </div>
+    <button onclick="fetchPosts()"> Fetch latest posts </button>
+        <script>
+
+          async function fetchPosts(){
+            const res = await axios.get("https://jsonplaceholder.typicode.com/posts")
+            const arr = res.data;
+            for(let i=0; i<arr.length;i++)
+            {
+                document.getElementById("posts").innerHTML= ("<div>" + JSON.stringify(arr[i].title) + "</div>");
+
+            }
+          }
+
+          // added
+        </script>
+    </body>
+    
+</html>

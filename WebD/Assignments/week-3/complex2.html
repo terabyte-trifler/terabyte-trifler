@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>
+            To do List Complex 
+        </title>
+    </head>
+
+    <body>
+        <input type="text"> </inout>
+        <button onclick="addTodo()"> Add to do!</button>
+    </body>
+
+    <script>
+        function addTodo(){
+            const value = document.querySelector("input").value;
+
+            const createdSpan = document.createElement("span");
+            const createdButton = document.createElement("button");
+
+            createdSpan.innerHTML = value;
+            createdButton.innerHTML = ("Delete");
+
+            const divEle = document.createElement("div");
+
+            divEle.appendChild(createdSpan);
+            divEle.appendChild(createdButton);
+
+            document.querySelector("body").appendChild(divEle);
+
+        }
+    </script>
+</html>
