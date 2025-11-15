@@ -1,13 +1,9 @@
 fn main() {
     
-    let str = String::from("Harkirat");
-    let len = get_length(&str);
-    println!("{} {}", str, len);
+    let mut s1 = String::from("hello");
+
+    s1.push_str(" world");
+
+    println!("{}", s1);
 
 }
-
-fn get_length(str: &String) -> usize {
-    let len = str.len();
-    return len
-}
-
