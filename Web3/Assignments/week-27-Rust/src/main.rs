@@ -1,22 +1,16 @@
 fn main() {
 
-    let str = String::from("Gurnoor Singh");
+    let s = String::from("Hello , Rust!");
+    let len = calculate_length(&s);
 
-    println!("First name {}", get_first_name(str))
+    println!("The String '{}' has length {}", s, len);
 
 
 }
 
-pub fn get_first_name(str:String) -> String{
-    let mut first_name = String:: from("");
 
-    for c in str.chars(){
+fn calculate_length(s: &String) -> usize {
 
-        if c == ' ' {
-            break
-        }
-        first_name.push(c);
-    }
+    s.len()
 
-    return first_name;
 }
