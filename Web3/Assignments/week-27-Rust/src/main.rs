@@ -1,16 +1,14 @@
-fn main() {
+fn main(){
+    
+    let mut s = String::from("Hello");
 
-    let s = String::from("Hello , Rust!");
-    let len = calculate_length(&s);
+    println!("Before: {}", s);
 
-    println!("The String '{}' has length {}", s, len);
+    append_text(&mut s);
 
-
+    println!("After: {}", s);
 }
 
-
-fn calculate_length(s: &String) -> usize {
-
-    s.len()
-
+fn append_text(s: &mut String) {
+    s.push_str(", World!");
 }
