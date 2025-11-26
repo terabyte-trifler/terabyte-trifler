@@ -4,12 +4,11 @@ struct Rect{
 }
 
 impl Rect {
-    fn area(&self) -> u32 {
-        self.width * self.height
-    }
+  fn print_str(){
+    println!("Inside the rect structure");
+  }
 }
 
 fn main() {
-    let rect = Rect { width: 30, height: 50 };
-    println!("{}", rect.area());  // Called ON the instance
+    Rect::print_str();
 }
