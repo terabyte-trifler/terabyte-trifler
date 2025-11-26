@@ -1,23 +1,15 @@
-#[derive(Clone)]
+struct Rect{
+    width: u32,
+    height: u32,
+}
 
-struct User {
-    active: bool,
-    sign_in_count: u64,
-    username: String,
+impl Rect {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
 }
 
 fn main() {
-
-    let mut user1 = User {
-        active: true,
-        sign_in_count: 1,
-        username: "harkirat".to_string()
-    };
-    change_name(user1.clone());
-    print!("User 1 username: {}", user1.active)
-
-}
-
-fn change_name(user1: User){
-    print!("User 1 username: {:?}", user1.active)
+    let rect = Rect { width: 30, height: 50 };
+    println!("{}", rect.area());  // Called ON the instance
 }
